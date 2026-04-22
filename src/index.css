@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cinzel:wght@500;700&display=swap');
+
+:root {
+  --bg-primary: #0f0e0c;
+  --bg-secondary: #161411;
+  --bg-card: #1c1915;
+
+  --accent: #c9a96a;           /* gold */
+  --accent-soft: #c9a96a22;
+  --accent-hover: #e6c27a;
+
+  --text-primary: #eae7e0;
+  --text-secondary: #a8a39b;
+  --text-muted: #5c574f;
+
+  --border: #2a261f;
+  --border-light: #3a342a;
+
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Cinzel', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 20%, #1a1814 0%, transparent 40%),
+    radial-gradient(circle at 80% 0%, #1a1712 0%, transparent 40%),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+}
+
+/* subtle grain effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  nav {
+    padding: 0 1.25rem !important;
+    height: 60px !important;
+  }
+
+  /* Hide square boxes on mobile — show hamburger feel */
+  nav > div:last-child {
+    gap: 4px !important;
+  }
+
+  nav > div:last-child > a,
+  nav > div:last-child > div {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    font-size: 0 !important;
+    padding: 0 !important;
+  }
+
+  nav > div:last-child > a[style*="auto"] {
+    width: 22px !important;
+  }
+
+  /* Hero */
+  #intro {
+    padding: 0 1.25rem !important;
+    align-items: flex-start !important;
+    padding-top: 5rem !important;
+  }
+
+  #intro h1 {
+    font-size: 2.8rem !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  #intro p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Sections */
+  #skills,
+  #work,
+  #contact {
+    padding: 4rem 1.25rem !important;
+  }
+
+  /* Cards grid — single column on mobile */
+  #skills > div > div[style*="grid"],
+  #work > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About, Projects, Contact pages */
+  div[style*="maxWidth: '800px'"],
+  div[style*="maxWidth: '960px'"],
+  div[style*="maxWidth: '600px'"],
+  div[style*="maxWidth: '780px'"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Footer links */
+  footer > div {
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #intro h1 {
+    font-size: 2.2rem !important;
+  }
+
+  nav > div:last-child > a,
+  nav > div:last-child > div {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+  }
+}
