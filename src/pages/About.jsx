@@ -1,7 +1,19 @@
 import Reveal from '../components/Reveal'
 import { Link } from 'react-router-dom'
 
-const stack = ['Django', 'Django REST Framework', 'React', 'JavaScript', 'MySQL', 'HTML', 'CSS', 'Python', 'Git']
+const stack = [
+  "Python",
+  "FastAPI",
+  "Django",
+  "Django REST Framework",
+  "React",
+  "JavaScript",
+  "PostgreSQL",
+  "MySQL",
+  "SQLAlchemy",
+  "Tailwind CSS",
+  "Git",
+];
 
 export default function About() {
   return (
@@ -30,15 +42,25 @@ export default function About() {
           fontSize: '1rem',
         }}>
           <p style={{ marginBottom: '1rem' }}>
-            I'm a full stack web developer, specialising in building
-            fast, clean, and modern web applications using <span style={{ color: 'var(--accent)' }}>Django</span> and <span style={{ color: 'var(--accent)' }}>React</span>.
+            I'm a full-stack developer focused on building modern web applications with{" "}
+            <span style={{ color: 'var(--accent)' }}>FastAPI</span>,{" "}
+            <span style={{ color: 'var(--accent)' }}>Django</span>, and{" "}
+            <span style={{ color: 'var(--accent)' }}>React</span>.
+            I enjoy designing clean backend architectures, building REST APIs, and
+            creating products that solve real-world problems.
           </p>
+
           <p style={{ marginBottom: '1rem' }}>
-            I’m into learning, creating, and turning random ideas into something real. When I’m not 
-            coding, I’m usually thinking about the next thing to build.
+            Recently I've been building SaaS applications featuring authentication,
+            role-based access control, drag-and-drop Kanban boards, file uploads,
+            email workflows, and PostgreSQL databases. I'm always looking for ways
+            to write cleaner code and better software.
           </p>
+
           <p>
-            I’m open to work, as long as there’s something interesting to learn.
+            I'm currently looking for software engineering internships where I can
+            contribute, learn from experienced developers, and continue growing as a
+            backend-focused full-stack engineer.
           </p>
         </div>
       </Reveal>
@@ -79,10 +101,22 @@ export default function About() {
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '3rem' }}>
           {[
-              {title: 'Web Apps', desc: 'Projects built with Django and React' },
-              {title: 'APIs', desc: 'Backend endpoints for forms and data' },
-              {title: 'Frontend Development', desc: 'Building pages and interactive components' },
-              {title: 'Problem Solving', desc: 'Breaking problems into simple working parts' },
+              {
+                title: "Full-Stack Applications",
+                desc: "Building complete web applications using FastAPI, Django, React, and PostgreSQL.",
+              },
+              {
+                title: "REST APIs",
+                desc: "Designing secure APIs with authentication, authorization, validation, and database integration.",
+              },
+              {
+                title: "Backend Systems",
+                desc: "Developing scalable backend architectures, business logic, file handling, and background tasks.",
+              },
+              {
+                title: "Modern UI",
+                desc: "Creating responsive interfaces with React and Tailwind CSS focused on usability.",
+              },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 80}>
               <div style={{
@@ -114,7 +148,9 @@ export default function About() {
         }}>
           <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>Want to work together?</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-            I'm open to work and collaborations.
+            I'm currently looking for Software Engineering and Full-Stack internships.
+            If you'd like to collaborate or discuss an opportunity, I'd love to hear
+            from you.
           </p>
           <Link to="/contact" style={{
             padding: '0.8rem 2rem',
