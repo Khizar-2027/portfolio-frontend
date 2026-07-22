@@ -1,19 +1,13 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import API from '../api'
-import { getMediaUrl } from '../utils/media'
+import { projects } from '../data/projects'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const [project, setProject] = useState(null)
-
-  useEffect(() => {
-    API.get(`/projects/${slug}/`).then(res => setProject(res.data))
-  }, [slug])
+  const project = projects.find(p => p.slug === slug)
 
   if (!project) return (
     <p style={{ paddingTop: '80px', padding: '4rem 2rem', color: 'var(--text-muted)' }}>
-      Loading...
+      Project not found.
     </p>
   )
 
@@ -33,7 +27,7 @@ export default function ProjectDetail() {
       {/* Thumbnail */}
       {project.thumbnail && (
         <img
-          src={getMediaUrl(project.thumbnail)}
+          src={project.thumbnail}
           alt={project.title}
           style={{
             width: '100%',

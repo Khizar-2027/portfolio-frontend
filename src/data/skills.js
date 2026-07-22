@@ -1,0 +1,18 @@
+export const skills = [
+  { id: 1, name: "Python", icon: "python", order: 1 },
+  { id: 2, name: "FastAPI", icon: "fastapi", order: 2 },
+  { id: 3, name: "Django", icon: "django", order: 3 },
+  { id: 4, name: "Django REST Framework", icon: "drf", order: 4 },
+  { id: 5, name: "React", icon: "react", order: 5 },
+  { id: 6, name: "JavaScript", icon: "javascript", order: 6 },
+  { id: 7, name: "SQLAlchemy", icon: "sqlalchemy", order: 7 },
+  { id: 8, name: "PostgreSQL", icon: "postgresql", order: 8 },
+  { id: 9, name: "SQL", icon: "sql", order: 9 },
+  { id: 10, name: "Redis", icon: "redis", order: 10 },
+  { id: 11, name: "HTML5", icon: "html", order: 11 },
+  { id: 12, name: "CSS3", icon: "css", order: 12 },
+  { id: 13, name: "Git", icon: "git", order: 13 },
+  { id: 14, name: "GitHub", icon: "github", order: 14 },
+  { id: 15, name: "Render", icon: "render", order: 15 },
+  { id: 16, name: "Vercel", icon: "vercel", order: 16 },
+];

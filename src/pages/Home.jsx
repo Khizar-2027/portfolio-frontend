@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import API from '../api'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Skeleton from '../components/Skeleton'
+import { skills as skills_data } from '../data/skills'
+import { projects as projects_data } from '../data/projects'
 
 // Typewriter hook
 function useTypewriter(words, speed = 80, pause = 1800) {
@@ -66,14 +67,9 @@ export default function Home({ setActiveSection }) {
   const typed = useTypewriter(titles)
 
   useEffect(() => {
-    Promise.all([
-      API.get('/skills/'),
-      API.get('/projects/?featured=true'),
-    ]).then(([s, p]) => {
-      setSkills(s.data)
-      setProjects(p.data)
-      setLoading(false)
-    })
+    setSkills(skills_data)
+    setProjects(projects_data.filter(p => p.is_featured))
+    setLoading(false)
   }, [])
 
   // Tells Navbar which section is currently visible

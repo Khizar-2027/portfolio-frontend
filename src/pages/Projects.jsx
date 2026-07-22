@@ -1,14 +1,7 @@
-import { useEffect, useState } from 'react'
-import API from '../api'
 import { Link } from 'react-router-dom'
-import { getMediaUrl } from '../utils/media'
+import { projects } from '../data/projects'
 
 export default function Projects() {
-  const [projects, setProjects] = useState([])
-
-  useEffect(() => {
-    API.get('/projects/').then(res => setProjects(res.data))
-  }, [])
 
   return (
     <div style={{ paddingTop: '80px', padding: '4rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
@@ -49,7 +42,7 @@ export default function Projects() {
             {/* Thumbnail */}
             {p.thumbnail ? (
               <img
-                src={getMediaUrl(p.thumbnail)}
+                src={p.thumbnail}
                 alt={p.title}
                 style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }}
               />

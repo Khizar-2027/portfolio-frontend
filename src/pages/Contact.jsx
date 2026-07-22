@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import API from '../api'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -13,9 +12,17 @@ export default function Contact() {
   const submit = async () => {
     setLoading(true)
     try {
-      await API.post('/contact/', form)
-      setSent(true)
-      setForm({ name: '', email: '', message: '' })
+      const res = await fetch('https://formspree.io/f/xnjebqqp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        alert('Error sending message')
+      }
     } catch {
       alert('Error sending message')
     }
@@ -29,11 +36,8 @@ export default function Contact() {
         Contact
       </h1>
 
-      <p style={{
-        color: 'var(--text-secondary)',
-        marginBottom: '2rem'
-      }}>
-        Let’s work together.
+      <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+        Let's work together.
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
